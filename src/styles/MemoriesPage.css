@@ -1,0 +1,209 @@
+/* MemoriesPage.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  .memories-container {
+    background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+    color: white;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Hero Section */
+  .hero-content {
+    text-align: center;
+    padding: 60px 20px 30px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    color: #ff7eb9;
+    text-shadow: 0 0 10px #ff7eb9;
+    margin-bottom: 10px;
+  }
+  
+  .sub-text {
+    font-size: 1.2rem;
+    color: #fcd6ff;
+    margin-bottom: 20px;
+  }
+  
+  .hero-img {
+    width: 300px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 100, 150, 0.6);
+  }
+  
+  .heart-line {
+    font-size: 1.5rem;
+    animation: floatHearts 3s infinite alternate ease-in-out;
+  }
+  
+  /* Memory Cards Section */
+  .memory-section {
+    text-align: center;
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #ffd6f6;
+    margin-bottom: 40px;
+    text-shadow: 0 0 8px #ffb6d9;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .memory-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .fancy-card {
+    width: 250px;
+    height: 320px;
+    perspective: 1200px;
+    flex: 1 1 250px;
+  }
+  
+  .fancy-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  
+  .fancy-card:hover .fancy-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .fancy-card-front,
+  .fancy-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-shadow: 0 0 25px rgba(255, 182, 219, 0.4);
+    font-size: 1.1rem;
+    backface-visibility: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    color: #fff;
+    border: 1px solid rgba(255, 182, 219, 0.3);
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .fancy-card-front {
+    font-weight: bold;
+    color: #ffc0cb;
+    font-size: 1.3rem;
+    text-shadow: 0 0 5px #ffb6d9;
+  }
+  
+  .fancy-card-back {
+    transform: rotateY(180deg);
+    color: #fff4fa;
+    line-height: 1.4;
+  }
+  
+  /* Reasons Section */
+  .reasons-section {
+    text-align: center;
+    padding: 60px 20px 120px;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 182, 219, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .reasons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .heart-box {
+    width: 250px;
+    min-height: 160px;
+    background: rgba(255, 182, 219, 0.1);
+    border: 1px solid rgba(255, 182, 219, 0.3);
+    border-radius: 30px;
+    padding: 20px;
+    color: #ffd1e9;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 182, 219, 0.3);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: floatUp 1.5s ease-in-out forwards;
+    opacity: 0;
+  }
+  
+  .heart-box:nth-child(odd) {
+    animation-delay: 0.3s;
+  }
+  
+  .heart-box:nth-child(even) {
+    animation-delay: 0.6s;
+  }
+  
+  .heart-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 182, 219, 0.5);
+  }
+  
+  @keyframes floatHearts {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes floatUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
