@@ -14,6 +14,39 @@ body, html {
     font-family: 'Segoe UI', sans-serif;
     display: flex;
     flex-direction: column;
+    position: relative;
+  }
+  
+  /* Loading Screen */
+  .loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #1f1c2c, #302b63);
+    color: #ffd6f6;
+    font-family: 'Segoe UI', cursive;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .candle-flame {
+    font-size: 4rem;
+    animation: flicker 1s infinite alternate;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes flicker {
+    from {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    to {
+      transform: scale(1.1);
+      opacity: 1;
+    }
   }
   
   /* Hero Section */
@@ -176,6 +209,117 @@ body, html {
     box-shadow: 0 0 20px rgba(255, 182, 219, 0.5);
   }
   
+  /* Letter Section */
+  .letter-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(255, 182, 219, 0.1);
+  }
+  
+  .letter-box {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #ffe6f2;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255, 182, 219, 0.2);
+    text-shadow: 0 0 5px rgba(255, 200, 230, 0.2);
+    backdrop-filter: blur(12px);
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Gallery Section */
+  .gallery-section {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .gallery-item {
+    width: 180px;
+    height: 220px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(255, 182, 219, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Audio Section */
+  .audio-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 182, 219, 0.1);
+  }
+  
+  .audio-section audio {
+    width: 100%;
+    max-width: 400px;
+    outline: none;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 182, 219, 0.3);
+  }
+  
+  /* Outro Section */
+  .outro-section {
+    text-align: center;
+    padding: 60px 20px 100px;
+  }
+  
+  .outro-title {
+    font-size: 2rem;
+    color: #ffbedf;
+    margin-bottom: 20px;
+  }
+  
+  .outro-text {
+    font-size: 1.2rem;
+    color: #fcd6ff;
+    margin-bottom: 30px;
+  }
+  
+  .gift-button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    background: #ff85b3;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 0 15px rgba(255, 100, 150, 0.3);
+  }
+  
+  .gift-button:hover {
+    background: #ff6fa6;
+    transform: scale(1.05);
+  }
+  
   @keyframes floatHearts {
     0% {
       transform: translateY(0);
@@ -207,3 +351,61 @@ body, html {
     }
   }
   
+  .music-toggle-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #ffb6c1;
+    color: #2a2a2a;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 0 12px rgba(255, 192, 203, 0.5);
+    transition: background-color 0.3s ease;
+  }
+  
+  .music-toggle-btn:hover {
+    background-color: #ff94b5;
+  }
+  
+  .gallery-item {
+    width: 200px;
+    height: 240px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(255, 182, 219, 0.3);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 28px rgba(255, 182, 219, 0.5);
+  }
+  
+  .gallery-item::after {
+    content: "💗";
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    font-size: 22px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .gallery-item:hover::after {
+    opacity: 1;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }

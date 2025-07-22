@@ -19,11 +19,10 @@ function CountdownPage() {
     const interval = setInterval(() => {
       const now = DateTime.utc();
       const diff = birthday.diff(now, ['days', 'hours', 'minutes', 'seconds']).toObject();
-
       if (birthday <= now) {
         clearInterval(interval);
         setShowFinal(true);
-        setTimeout(() => navigate('/main'), 6000);
+        setTimeout(() => navigate('/memories'), 6000);
       } else {
         setTimeLeft(diff);
       }
@@ -53,7 +52,7 @@ function CountdownPage() {
       {!showFinal ? (
         <div className="countdown-overlay">
           <h1 className="headline">
-         <span className="highlight">The Stars Are Waiting, Just Like Me, For Your Special Day 🌙💫</span>
+         <span className="highlight">The Stars Are Waiting Just Like Me, For Your Special Day. 🌙💫</span>
           </h1>
           <div className="countdown-box">
             <div className="time-segment">
